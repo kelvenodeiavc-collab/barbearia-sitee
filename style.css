@@ -87,8 +87,11 @@ h3 { font-family: 'Inter', sans-serif; font-weight: 700; letter-spacing: -0.01em
   overflow: hidden;
 }
 .hero-bg {
-  position: absolute; inset: 0;
-  background: url('https://images.unsplash.com/photo-1621605815971-fbc98d665033?w=1400&q=85') center/cover no-repeat;
+  position: absolute; inset: 0; z-index: 0;
+  background-image: url('https://images.unsplash.com/photo-1621605815971-fbc98d665033?w=1400&q=85');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 .hero-overlay {
   position: absolute; inset: 0;
@@ -138,11 +141,14 @@ h3 { font-family: 'Inter', sans-serif; font-weight: 700; letter-spacing: -0.01em
   overflow: hidden; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
   background: var(--dark); padding: 14px 0;
 }
+.marquee {
+  display: flex; width: max-content;
+  animation: marquee 25s linear infinite;
+}
 .marquee span {
   display: inline-block; white-space: nowrap;
   font-size: 0.82rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase;
-  color: var(--gray);
-  animation: marquee 22s linear infinite;
+  color: var(--gray); padding-right: 40px;
 }
 @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
